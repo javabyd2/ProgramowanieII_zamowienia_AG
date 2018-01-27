@@ -15,7 +15,6 @@ public class Zamowienie {
         this.maksRozmiar = maksRozmiar;
     }
 
-
     public void dodajPozycje(Pozycja p) {
         pozycje.add(p);
     }
@@ -30,6 +29,10 @@ public class Zamowienie {
 
     @Override
     public String toString() {
-        return"";
+        for (Pozycja s : pozycje) {
+            System.out.println(s.toString());
+        }
+        System.out.println(obliczWartosc());
+        return "";
     }
 }

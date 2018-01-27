@@ -19,7 +19,7 @@ public class Pozycja {
     @Override
     public String toString() {
         String format = "%1$-20s %2$-10s %3$-4s %4$-20s\n";
-        String wiadomosc = System.out.format(format, nazwaTowaru, cena + "zł", ileSztuk + "szt.", Double.toString(obliczWartosc()) +" zł").toString();
+        System.out.format(format, nazwaTowaru, cena + "zł", ileSztuk + "szt.", Double.toString(obliczWartosc()) + " zł");
 
         return "";
     }
