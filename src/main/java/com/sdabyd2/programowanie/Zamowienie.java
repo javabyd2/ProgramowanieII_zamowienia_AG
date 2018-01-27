@@ -29,6 +29,7 @@ public class Zamowienie {
 
     @Override
     public String toString() {
+        System.out.println("\n\nZamowienie");
         for (Pozycja s : pozycje) {
             System.out.println(s.toString());
         }
