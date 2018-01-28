@@ -1,4 +1,4 @@
-package com.sdabyd2.programowanie;
+package com.sdabyd2.programowanie.Model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,15 +6,39 @@ import java.util.List;
 public class Zamowienie {
     private List<Pozycja> pozycje = new ArrayList<>();
     private int ileDodanych;
-    private int maksRozmiar = 10;
+    private int maksRozmiar;
 
     public Zamowienie() {
+        this.maksRozmiar = 10;
     }
 
-    Zamowienie(int maksRozmiar) {
+    public Zamowienie(int maksRozmiar) {
         this.maksRozmiar = maksRozmiar;
     }
 
+    public List<Pozycja> getPozycje() {
+        return pozycje;
+    }
+
+    public void setPozycje(List<Pozycja> pozycje) {
+        this.pozycje = pozycje;
+    }
+
+    public int getIleDodanych() {
+        return ileDodanych;
+    }
+
+    public void setIleDodanych(int ileDodanych) {
+        this.ileDodanych = ileDodanych;
+    }
+
+    public int getMaksRozmiar() {
+        return maksRozmiar;
+    }
+
+    public void setMaksRozmiar(int maksRozmiar) {
+        this.maksRozmiar = maksRozmiar;
+    }
     public void dodajPozycje(Pozycja p) {
         pozycje.add(p);
     }
