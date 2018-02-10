@@ -5,6 +5,9 @@ public class Pozycja {
     private int ileSztuk;
     private double cena;
 
+    public Pozycja() {
+    }
+
     public Pozycja(String nazwaTowaru, int ileSztuk, double cena) {
         this.nazwaTowaru = nazwaTowaru;
         this.ileSztuk = ileSztuk;

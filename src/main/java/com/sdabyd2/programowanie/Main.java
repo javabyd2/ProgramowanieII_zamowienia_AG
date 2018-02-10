@@ -1,10 +1,12 @@
 package com.sdabyd2.programowanie;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sdabyd2.programowanie.Controller.ZamowieniaController;
 import com.sdabyd2.programowanie.Model.Pozycja;
 import com.sdabyd2.programowanie.Model.Zamowienie;
 import com.sdabyd2.programowanie.View.ZamowienieView;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,5 +43,17 @@ public class Main {
       //  zamowieniaController.updateView();
 
         zamowienieView.displayZamowienie(zamowienie);
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        File fileName = new File("orders.json");
+        fileName.createNewFile();
+        objectMapper.writeValue(fileName, zamowienie);
+
+        Zamowienie readZamowienie = objectMapper.readValue(new File("orders.json"), Zamowienie.class);
+
+        for (Pozycja zam : readZamowienie.getPozycje()) {
+            System.out.println(zam.getNazwaTowaru());
+        }
+
     }
 }
